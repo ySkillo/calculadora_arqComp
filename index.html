@@ -1,0 +1,279 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SPTecher's Machine</title>
+</head>
+
+<body id="body_color">
+    <h1 id="just_do_it">JUST DO IT</h1>
+    <div id="container">
+        <div id="div_inputs">
+            <span><h1 id="h1_titulo">DECIMAL</h1><img src="01.png" alt=""></span>
+            <div id="div_inputs_box">
+                <label for="demo1" id="textoCima">Digite um número decimal</label>
+                <div id="button_check">
+                    <input type="number" id="demo1">
+                    <button id="btn_enviar" onclick="converterDecimal()">></button>
+                </div>
+                <label for="demo2" id="texto1">Octal</label>
+                <div type="text" id="demo2" class="input"></div>
+                <label for="demo3" id="texto2">Hexadecimal</label>
+                <div type="text" id="demo3" class="input"></div>
+                <label for="demo4" id="texto3">Binário</label>
+                <div type="text" id="demo4" class="input"></div>
+            </div>
+        </div>
+    
+        <div id="div_img">
+            <img src="Group 1.png" alt="">
+        </div>
+    
+        <div id="nav_bar">
+            <button id="btn_sessao1" onclick="decimalSessao()"></button>
+            <button id="btn_sessao2" onclick="hexadecimalSessao()"></button>
+            <button id="btn_sessao3" onclick="octalSessao()"></button>
+            <button id="btn_sessao4" onclick="binarioSessao()"></button>
+        </div>
+
+    </div>
+
+    <div id="div_rodape">
+        <h3>O CAMINHO DA LUZ É O BASQUETE</h3>
+        <h1 id="nba">NBA</h1>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    
+    // fundos
+    var fundoA = "#111111";
+    var fundoB = "#0059FF";
+    var fundoC = "#FF0000";
+    var fundoD ="#8B008B";
+
+    //letra fundo
+    var letraA = "#131313"
+    var letraB = "#2839F4"
+    var letraC = "#FF1818"
+    var letraD = "#990099";
+
+     function converterDecimal() {
+         var decimal = Number(demo1.value);
+         console.log("click feito")
+
+         demo2.innerHTML = decimal.toString(8);
+         demo3.innerHTML = decimal.toString(16);
+         demo4.innerHTML = decimal.toString(2);
+     }
+
+     function converterOctal() {
+         var decimal = Number(demo1.value);
+         var octal = demo1.value;
+         var decimal = parseInt(octal, 8);
+         
+         demo2.innerHTML = decimal;
+         demo3.innerHTML = decimal.toString(16);
+         demo4.innerHTML = decimal.toString(2);
+     }
+
+     function converterHexadecimal() {
+         var hexadecimal = demo1.value;
+         var decimal = parseInt(hexadecimal, 16);
+
+         demo2.innerHTML = decimal.toString(8);
+         demo3.innerHTML = decimal;
+         demo4.innerHTML = decimal.toString(2);
+     }
+     function converterBinario() {
+         var binario = demo1.value;
+         var decimal = parseInt(binario, 2);
+
+         demo2.innerHTML = decimal.toString(8);
+         demo3.innerHTML = decimal;
+         demo4.innerHTML = decimal.toString(16);
+     }
+
+     function decimalSessao(){
+
+        
+        textoCima.innerHTML="Digite um número decimal"
+        texto1.innerHTML="Octal"
+        texto2.innerHTML="Hexadecimal"
+        texto3.innerHTML="Binário"
+
+        //reset outros btn
+        btn_sessao2.style.backgroundImage = 'url("01.png")';
+        btn_sessao2.style.backgroundColor = "transparent";
+        btn_sessao3.style.backgroundImage = 'url("01.png")';
+        btn_sessao3.style.backgroundColor = "transparent";
+        btn_sessao4.style.backgroundImage = 'url("01.png")';
+        btn_sessao4.style.backgroundColor = "transparent";
+
+        body_color.style.background = fundoA;
+        just_do_it.style.color = letraA;
+        btn_sessao1.style.backgroundImage = 'url("04.png")';
+        btn_sessao1.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="number" id="demo1"><button id="btn_enviar" onclick="converterDecimal()">></button>`
+
+
+        h1_titulo.innerHTML = "DECIMAL"
+        btn_enviar.style.backgroundColor = "#111111"
+        btn_enviar.style.borderColor = "#232323"
+        btn_enviar.style.color = "#fff"
+
+        demo1.style.background = "#232323"
+        demo2.style.background = "#232323"
+        demo3.style.background = "#232323"
+        demo4.style.background = "#232323"
+
+        demo1.style.color = "#fff"
+        demo2.style.color = "#fff"
+        demo3.style.color = "#fff"
+        demo4.style.color = "#fff"
+
+        div_img.innerHTML = `<img src="Group 1.png" alt="">`
+     }
+
+     function hexadecimalSessao(){
+
+        textoCima.innerHTML="Digite um número Hexadecimal"
+        texto1.innerHTML="Octal"
+        texto2.innerHTML="Decimal"
+        texto3.innerHTML="Binário"
+
+        //reset outros btn
+        btn_sessao1.style.backgroundImage = 'url("01.png")';
+        btn_sessao1.style.backgroundColor = "transparent";
+        btn_sessao3.style.backgroundImage = 'url("01.png")';
+        btn_sessao3.style.backgroundColor = "transparent";
+        btn_sessao4.style.backgroundImage = 'url("01.png")';
+        btn_sessao4.style.backgroundColor = "transparent";
+
+        body_color.style.background = fundoB;
+        just_do_it.style.color = letraB;
+        btn_sessao2.style.backgroundImage = 'url("03.png")';
+        btn_sessao2.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="text" id="demo1"><button id="btn_enviar" onclick="converterHexadecimal()">></button>`
+
+        h1_titulo.innerHTML = "HEXADECIMAL"
+        btn_enviar.style.backgroundColor = "#0059FF"
+        btn_enviar.style.borderColor = "#fff"
+        btn_enviar.style.color = "#fff"
+        demo1.style.background = "#fff"
+        demo2.style.background = "#fff"
+        demo3.style.background = "#fff"
+        demo4.style.background = "#fff"
+
+        demo1.style.color = "#000"
+        demo2.style.color = "#000"
+        demo3.style.color = "#000"
+        demo4.style.color = "#000"
+
+
+        div_img.innerHTML = `<img src="Group 2.png" alt="">`
+
+     }
+
+     function octalSessao(){
+
+        textoCima.innerHTML="Digite um número Octal"
+        texto1.innerHTML="Decimal"
+        texto2.innerHTML="Hexadecimal"
+        texto3.innerHTML="Binário"
+
+        //reset outros btn
+        btn_sessao2.style.backgroundImage = 'url("01.png")';
+        btn_sessao2.style.backgroundColor = "transparent";
+        btn_sessao1.style.backgroundImage = 'url("01.png")';
+        btn_sessao1.style.backgroundColor = "transparent";
+        btn_sessao4.style.backgroundImage = 'url("01.png")';
+        btn_sessao4.style.backgroundColor = "transparent";
+
+        body_color.style.background = fundoC;
+        just_do_it.style.color = letraC;
+        btn_sessao3.style.backgroundImage = 'url("05.png")';
+        btn_sessao3.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="number" id="demo1"><button id="btn_enviar" onclick="converterOctal()">></button>`
+
+        h1_titulo.innerHTML = "OCTAL"
+        btn_enviar.style.backgroundColor = "#FF0000"
+        btn_enviar.style.borderColor = "#fff"
+        btn_enviar.style.color = "#fff"
+
+        demo1.style.background = "#fff"
+        demo2.style.background = "#fff"
+        demo3.style.background = "#fff"
+        demo4.style.background = "#fff"
+
+        demo1.style.color = "#000"
+        demo2.style.color = "#000"
+        demo3.style.color = "#000"
+        demo4.style.color = "#000"
+
+        div_img.innerHTML = `<img src="Group 3.png" alt="">`
+
+
+        
+
+
+
+
+     }
+     function binarioSessao(){
+
+        textoCima.innerHTML="Digite um número binário"
+        texto1.innerHTML="Octal"
+        texto2.innerHTML="Decimal"
+        texto3.innerHTML="Hexadecimal"
+
+        //reset outros btn
+        btn_sessao3.style.backgroundImage = 'url("01.png")';
+        btn_sessao3.style.backgroundColor = "transparent";
+        btn_sessao2.style.backgroundImage = 'url("01.png")';
+        btn_sessao2.style.backgroundColor = "transparent";
+        btn_sessao1.style.backgroundImage = 'url("01.png")';
+        btn_sessao1.style.backgroundColor = "transparent";
+
+
+        body_color.style.background = fundoD;
+        just_do_it.style.color = letraD;
+        btn_sessao4.style.backgroundImage = 'url("02.png")';
+        btn_sessao4.style.backgroundColor = "#fff";
+        button_check.innerHTML = `<input type="number" id="demo1"><button id="btn_enviar" onclick="converterBinario()">></button>`
+
+        h1_titulo.innerHTML = "Binario"
+        btn_enviar.style.backgroundColor = "purple"
+        btn_enviar.style.borderColor = "#fff"   
+        btn_enviar.style.color = "#fff"
+
+        demo1.style.background = "#fff"
+        demo2.style.background = "#fff"
+        demo3.style.background = "#fff"
+        demo4.style.background = "#fff"
+
+        demo1.style.color = "#000"
+        demo2.style.color = "#000"
+        demo3.style.color = "#000"
+        demo4.style.color = "#000"
+
+        div_img.innerHTML = `<img src="kobe.png" alt="">`
+
+
+
+
+
+
+
+}
+
+</script>
